@@ -447,6 +447,19 @@ body {
 }
 
 /* ============================================
+   Petition
+   ============================================ */
+
+.petition {
+  padding: var(--space-3xl) 0;
+  background: var(--color-dark-elevated);
+}
+
+.petition .section-subtitle {
+  margin-bottom: var(--space-2xl);
+}
+
+/* ============================================
    Partners / Coalition
    ============================================ */
 
