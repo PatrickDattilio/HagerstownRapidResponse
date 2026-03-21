@@ -70,6 +70,68 @@ body {
 }
 
 /* ============================================
+   Header Nav
+   ============================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 20, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  gap: var(--space-xl);
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+@media (min-width: 640px) {
+  .header__logo img {
+    height: 48px;
+  }
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-lg);
+  justify-content: flex-end;
+}
+
+.header__nav a {
+  color: var(--color-gray-400);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.header__nav a:not(.btn):hover {
+  color: var(--color-amber);
+}
+
+.header__nav .btn--sm {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+}
+
+/* ============================================
    Hero Section
    ============================================ */
 
@@ -681,4 +743,52 @@ body {
   font-size: 0.8125rem;
   margin: 0;
   color: var(--color-gray-400);
+}
+
+/* ============================================
+   District Map Page
+   ============================================ */
+
+.map-page {
+  min-height: calc(100vh - 80px);
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  background: var(--color-dark-elevated);
+}
+
+.map-page__title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 var(--space-sm);
+}
+
+.map-page__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-gray-400);
+  margin: 0 0 var(--space-2xl);
+}
+
+.map-page__embed {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-dark-card);
+}
+
+/* Responsive 16:9 aspect ratio for iframe */
+.map-page__embed iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  min-height: 300px;
+  border: none;
+}
+
+.footer--minimal .footer__bottom {
+  margin-top: 0;
+  padding-top: var(--space-xl);
 }
