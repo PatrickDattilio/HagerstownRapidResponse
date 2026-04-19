@@ -30,12 +30,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="header">
     <div class="header__inner container">
       <a href="index.html" class="header__logo">
         <img src="assets/logo-horizontal.png" alt="Hagerstown Rapid Response" width="200" height="48">
       </a>
-      <nav class="header__nav">
+      <button
+        type="button"
+        class="header__menu-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open menu"
+      >
+        <span class="header__menu-toggle-box" aria-hidden="true">
+          <span class="header__menu-toggle-inner"></span>
+        </span>
+      </button>
+      <nav class="header__nav" id="primary-navigation" aria-label="Main navigation">
         <a href="index.html#mission">How It Works</a>
         <a href="index.html#join">Join</a>
         <a href="index.html#petition">Take Action</a>
@@ -48,7 +60,9 @@
     </div>
   </header>
 
-  <main class="timeline-page">
+  <button type="button" class="header-nav-overlay" id="header-nav-overlay" hidden aria-label="Close menu"></button>
+
+  <main id="main" class="timeline-page">
     <div class="container">
       <div class="timeline-page__intro">
         <h1 class="timeline-page__title">Timeline</h1>
@@ -327,6 +341,7 @@
     </div>
   </footer>
 
+  <script src="nav.js"></script>
   <script src="timeline.js"></script>
 </body>
 </html>

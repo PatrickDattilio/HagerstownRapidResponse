@@ -61,13 +61,25 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <!-- Header Nav -->
   <header class="header">
     <div class="header__inner container">
       <a href="#" class="header__logo">
         <img src="assets/logo-horizontal.png" alt="Hagerstown Rapid Response" width="200" height="48">
       </a>
-      <nav class="header__nav">
+      <button
+        type="button"
+        class="header__menu-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open menu"
+      >
+        <span class="header__menu-toggle-box" aria-hidden="true">
+          <span class="header__menu-toggle-inner"></span>
+        </span>
+      </button>
+      <nav class="header__nav" id="primary-navigation" aria-label="Main navigation">
         <a href="#mission">How It Works</a>
         <a href="#join">Join</a>
         <a href="#petition">Take Action</a>
@@ -80,6 +92,9 @@
     </div>
   </header>
 
+  <button type="button" class="header-nav-overlay" id="header-nav-overlay" hidden aria-label="Close menu"></button>
+
+  <main id="main">
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero__content">
@@ -242,6 +257,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -293,6 +310,7 @@
     </div>
   </footer>
 
+  <script src="nav.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
